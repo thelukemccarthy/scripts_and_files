@@ -38,6 +38,9 @@ alias grm='npx grunt mocks'
 alias grc='npx grunt connect:eesg'
 alias grw='npx grunt watch'
 
+# Node aliases
+alias ndm='find . -name "node_modules" -type d -prune | xargs rm -rf'
+
 # NPM aliases
 alias ns='npm start'
 alias nt='npm test'
