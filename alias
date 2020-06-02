@@ -31,6 +31,10 @@ alias gsd='git stash drop'
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gsm='git stash save'
+alias gbl='git branch'
+alias gblr='git branch -r'
+alias gbla='git branch -a'
+alias gbc='git checkout -b'
 
 # Grunt aliases
 alias grb='npx grunt build'
