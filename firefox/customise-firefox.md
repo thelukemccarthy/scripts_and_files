@@ -7,4 +7,5 @@
 1. Navigate to about:profiles
 1. Navigate to the 'Root Directory' of 'Profile: default-release'
 1. Create a directory called 'chrome'
-1. Copy 'userChrome.css' into the 'chrome' directory just created
+1. Copy 'userChrome-[mac|linux].css' into the 'chrome' directory just created
+1. Rename the 'userChrome-[mac|linux].css' to 'userChrome.css''
