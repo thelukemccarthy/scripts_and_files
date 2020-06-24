@@ -1,0 +1,32 @@
+#navigator-toolbox{
+  display: grid;
+  grid-template-columns: [column1] 80px [colum2]auto;
+  grid-auto-rows: [row1] 100px [row2] 30px;
+}
+
+#TabsToolbar .toolbar-items {
+  display: none;
+}
+
+#tilebar {
+  grid-column: column1 / span;
+  grid-row: row1 / span;
+}
+
+#nav-bar{
+  grid-column: column2 / span;
+  grid-row: row1 / span;
+  background-color: rgb(12, 12, 13) !important;
+}
+
+#urlbar-container {
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+
+toolbar#PersonalToolbar.browser-toolbar {
+  height: 40px;
+  grid-column: column1 / span 2;
+  grid-row: row2 / span;
+  background-color: rgb(12, 12, 13) !important;
+}

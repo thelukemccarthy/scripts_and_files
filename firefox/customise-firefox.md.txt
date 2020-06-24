@@ -1,0 +1,10 @@
+1. Open firefox
+1. Install Tree Style Tab https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/?src=search
+1. Naviage to about:config
+1. Click on the button 'Accept the Risk and Continue'
+1. Search for 'toolkit.legacyUserProfileCustomizations.stylesheets'
+1. Set the value of 'toolkit.legacyUserProfileCustomizations.stylesheets' to true
+1. Navigate to about:profiles
+1. Navigate to the 'Root Directory' of 'Profile: default-release'
+1. Create a directory called 'chrome'
+1. Copy 'userChrome.css' into the 'chrome' directory just created
