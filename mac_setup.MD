@@ -6,15 +6,38 @@
     1. brew install git
 3. Clone terminal alias
     1. git clone https://github.com/thelukemccarthy/bash_alias.git
-    2. Update ~/.zshrc to have  source ~/bash_alias/alias
+    2. Update ~/.zshrc to have source ~/bash_alias/alias
 4. Install and setup ‘Informative git prompt for zsh’ (https://github.com/olivierverdier/zsh-git-prompt) 
     1. git clone https://github.com/olivierverdier/zsh-git-prompt.git
     2. Update ~/.zshrc to have 
 		source ~/zsh-git-prompt/zshrc.sh
 		PROMPT='%B%m%~%b$(git_super_status) %# '
 5. Install NVM 
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash  
-6. Install yarn brew install yarn
+  1. brew install nvm
+  2. Add the following to ~/.zshrc after nvm to automatically change node versions if a .nvmrc file exists
+  ```shell script 
+  autoload -U add-zsh-hook
+  load-nvmrc() {
+    local node_version="$(nvm version)"
+    local nvmrc_path="$(nvm_find_nvmrc)"
+  
+    if [ -n "$nvmrc_path" ]; then
+      local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+  
+      if [ "$nvmrc_node_version" = "N/A" ]; then
+        nvm install
+      elif [ "$nvmrc_node_version" != "$node_version" ]; then
+        nvm use
+      fi
+    elif [ "$node_version" != "$(nvm version default)" ]; then
+      echo "Reverting to nvm default version"
+      nvm use default
+    fi
+  }
+  add-zsh-hook chpwd load-nvmrc
+  load-nvmrc
+```
+6. Install yarn ```brew install yarn```
 7. Generate a new ssh key
     1. Run the command ssh-keygen -t rsa -C <email address>
     2. Run the following command to create a config file for ssh touch ~/.ssh/config 
