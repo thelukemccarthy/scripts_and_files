@@ -35,6 +35,7 @@ alias gbl='git branch'
 alias gblr='git branch -r'
 alias gbla='git branch -a'
 alias gbc='git checkout -b'
+alias gbd='git branch -d'
 
 # Grunt aliases
 alias grb='npx grunt build'
