@@ -1,6 +1,6 @@
 #navigator-toolbox{
   display: grid;
-  grid-template-columns: [column1] 0px [colum2]auto;
+  grid-template-columns: [column1] 200px [colum2]auto;
   grid-auto-rows: [row1] 100px [row2] 30px;
 }
 
@@ -8,7 +8,8 @@
   display: none;
 }
 
-#tilebar {
+/* #tilebar { */
+.titlebar-buttonbox-container {
   grid-column: column1 / span;
   grid-row: row1 / span;
 }
