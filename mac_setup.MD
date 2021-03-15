@@ -8,6 +8,7 @@
       1. ```git config --global user.name "Luke McCarthy"```
       1. ```git config --global user.email <CLIENT_EMAIL_ADDRESS>```
 3. Generate a new ssh key for each git user
+  1. ** NEVER use the same password for and key generated** not only is this more secure it also ensures you never commit to the wrong repo
     1. Run the command ```ssh-keygen -t rsa -C <EMAIL_ADDRESS>```
       1. Name the files with <serviceName-accountName> for example ```github-thelukemccarthy```
     1. Setup git to use the new keys
@@ -40,7 +41,7 @@
 		```git config --global diff.guitool kdiff3```  
 		```git config --global difftool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’```  
 		```git config --global difftool.kdiff3.trustExitCode false```  
-5. Clone terminal alias
+5. Clone terminal scripts and files
     1. ```git clone https://github.com/thelukemccarthy/scripts_and_files.git```
     2. Update ```~/.zshrc``` to have source ```~/scripts_and_files/alias```
 6. Install and setup ‘Informative git prompt for zsh’ (https://github.com/olivierverdier/zsh-git-prompt) 
