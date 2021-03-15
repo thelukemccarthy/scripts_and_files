@@ -8,7 +8,7 @@
       1. ```git config --global user.name "Luke McCarthy"```
       1. ```git config --global user.email <CLIENT_EMAIL_ADDRESS>```
 3. Generate a new ssh key for each git user
-  1. **NEVER reuse a password for any key generated** not only is this more secure, it also ensures you never commit to the wrong repo
+  1. **NEVER reuse a password for any key generated** not only is this more secure, it also ensures you never commit to the wrong repo  
     1. Run the command ```ssh-keygen -t rsa -C <EMAIL_ADDRESS>```
       1. Name the files with <serviceName-accountName> for example ```github-thelukemccarthy```
     1. Setup git to use the new keys
