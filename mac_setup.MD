@@ -13,17 +13,16 @@
     1. Setup git to use the new keys
       1. Add the following to the ```~/.gitconfig``` file  
       ```
-      [includeif "gitdir:<PATH_TO_SRC_CODE>"]
-        [user]
-                email="<CLIENT_EMAIL_ADDRESS>"
-        [core]
-                sshCommand="ssh -i ~/.ssh/<SSH_KEY_FOR_CLIENT_WORK>"
-
-[includeif "gitdir:<HOME_ABSOLUTE_PATH>/scripts_and_files/"]
-        [user]
-                email="<PERSONAL_EMAIL_ACCOUNT>"
-        [core]
-                sshCommand="ssh -i ~/.ssh/github_thelukemccarthy"
+        [includeif "gitdir:<PATH_TO_SRC_CODE>"]
+          [user]
+            email="<CLIENT_EMAIL_ADDRESS>"
+          [core]
+            sshCommand="ssh -i ~/.ssh/<SSH_KEY_FOR_CLIENT_WORK>"
+        [includeif "gitdir:<HOME_ABSOLUTE_PATH>/scripts_and_files/"]
+          [user]
+            email="<PERSONAL_EMAIL_ACCOUNT>"
+          [core]
+            sshCommand="ssh -i ~/.ssh/github_thelukemccarthy"
       ```  
     1. NB an alternative is to use a .ssh/config file to force work to use a key for a domain
       1. Run the following command to create a config file for ssh ```touch ~/.ssh/config```
