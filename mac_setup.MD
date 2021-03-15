@@ -33,13 +33,13 @@
 			  IdentityFile ~/.ssh/bitbucket_mac```
 4. Install Kdiff3
     1. Setup git to use it
-		```git config --global merge.tool kdiff3```
-		```git config --global mergetool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’```
-		```git config --global mergetool.kdiff3.trustExitCode false```
-
-		```git config --global diff.guitool kdiff3```
-		```git config --global difftool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’```
-		```git config --global difftool.kdiff3.trustExitCode false```
+		```git config --global merge.tool kdiff3```  
+		```git config --global mergetool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’```  
+		```git config --global mergetool.kdiff3.trustExitCode false```  
+  
+		```git config --global diff.guitool kdiff3```  
+		```git config --global difftool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’```  
+		```git config --global difftool.kdiff3.trustExitCode false```  
 5. Clone terminal alias
     1. ```git clone https://github.com/thelukemccarthy/scripts_and_files.git```
     2. Update ```~/.zshrc``` to have source ```~/scripts_and_files/alias```
