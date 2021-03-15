@@ -1,20 +1,20 @@
 # Setting up a new Mac
 
 1. Install brew (https://brew.sh/)
-    1. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    1. ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"```
 2. Install git
     1. brew install git
 3. Clone terminal alias
-    1. git clone https://github.com/thelukemccarthy/bash_alias.git
-    2. Update ~/.zshrc to have source ~/bash_alias/alias
+    1. ```git clone https://github.com/thelukemccarthy/bash_alias.git```
+    2. Update ```~/.zshrc``` to have source ```~/bash_alias/alias```
 4. Install and setup ‘Informative git prompt for zsh’ (https://github.com/olivierverdier/zsh-git-prompt) 
-    1. git clone https://github.com/olivierverdier/zsh-git-prompt.git
-    2. Update ~/.zshrc to have 
-		source ~/zsh-git-prompt/zshrc.sh
-		PROMPT='%B%m%~%b$(git_super_status) %# '
+    1. ```git clone https://github.com/olivierverdier/zsh-git-prompt.git```
+    2. Update ```~/.zshrc``` to have 
+		```source ~/zsh-git-prompt/zshrc.sh
+		PROMPT='%B%m%~%b$(git_super_status) %# '```
 5. Install NVM 
-  1. brew install nvm
-  2. Add the following to ~/.zshrc after nvm to automatically change node versions if a .nvmrc file exists
+  1. ```brew install nvm```
+  2. Add the following to ```~/.zshrc``` after nvm to automatically change node versions if a .nvmrc file exists
   ```shell script 
   autoload -U add-zsh-hook
   load-nvmrc() {
@@ -39,13 +39,13 @@
 ```
 6. Install yarn ```brew install yarn```
 7. Generate a new ssh key
-    1. Run the command ssh-keygen -t rsa -C <email address>
-    2. Run the following command to create a config file for ssh touch ~/.ssh/config 
+    1. Run the command ```ssh-keygen -t rsa -C <email address>```
+    2. Run the following command to create a config file for ssh ```touch ~/.ssh/config```
     3. Edit the config file to add the domain to use it for, for example
-		Host bitbucket.org
+		```Host bitbucket.org
 			Hostname bitbucket.org
 			User git
-			IdentityFile ~/.ssh/bitbucket_mac
+			IdentityFile ~/.ssh/bitbucket_mac```
 8. Download and Install VS Code (https://code.visualstudio.com/docs/?dv=osx)
 9. Install the following plugin for VS Code 
     1. Live Share
@@ -63,13 +63,13 @@
         7. Disable ‘Open man Page in Terminal’
 11. Install Kdiff3
     1. Setup git to use it
-		git config --global merge.tool kdiff3
-		git config --global mergetool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’
-		git config --global mergetool.kdiff3.trustExitCode false
+		```git config --global merge.tool kdiff3```
+		```git config --global mergetool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’```
+		```git config --global mergetool.kdiff3.trustExitCode false```
 
-		git config --global diff.guitool kdiff3
-		git config --global difftool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’
-		git config --global difftool.kdiff3.trustExitCode false
+		```git config --global diff.guitool kdiff3```
+		```git config --global difftool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’```
+		```git config --global difftool.kdiff3.trustExitCode false```
 12. Download and install Virtualbox
 13. Download and setup Win10 for IE test (https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
     1. The password for the VM is Passw0rd!
