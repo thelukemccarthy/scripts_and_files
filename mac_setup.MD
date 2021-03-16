@@ -73,7 +73,7 @@
   }
   add-zsh-hook chpwd load-nvmrc
   load-nvmrc
-```
+  ```
 8. Install yarn ```brew install yarn```
 9. Download and Install VS Code (https://code.visualstudio.com/docs/?dv=osx)
 10. Install the following plugin for VS Code 
