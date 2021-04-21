@@ -34,6 +34,8 @@
             ```  
               [includeif "gitdir:~/scripts_and_files/"]  
                 path = ~/.gitconfig-thelukemccarthy  
+        [includeif "gitdir:~/Library/Application Support/JetBrains/IntelliJIdea2021.1/settingsRepository/"]
+	        path = ~/.gitconfig-thelukemccarthy
               [includeif "gitdir:<PATH_TO_SRC_CODE_DIR>"]  
                 path = ~/.gitconfig-<CLIENT_NAME>  
             ```  
