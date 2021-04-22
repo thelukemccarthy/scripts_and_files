@@ -109,6 +109,13 @@
         1. Find ‘Text’
         1. Disable ‘Search man Page Index in Terminal’
         1. Disable ‘Open man Page in Terminal’
+    1. Install the following plugins
+        1. File Watchers
+        1. Indent Rainbow
+        1. Night Owl Theme
+        1. Prettier
+        1. Rainbow Brackets
+        1. Docker
 1. Download and install Virtualbox
 1. Download and setup Win10 for IE test <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>
     1. The password for the VM is Passw0rd!
