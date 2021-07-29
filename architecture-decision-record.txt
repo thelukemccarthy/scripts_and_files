@@ -1,6 +1,7 @@
 Title: A short description of the decision to be made, this is similar to an 
   email subject
-Participant: List the people involved in the decision. This can make it easier
+Date: The Date the decision was made
+Participants: List the people involved in the decision. This can make it easier
   to get more information later
 Context: Provide as much context around the problem as possible.
   This should include any factors at play including; technological, political, 
@@ -19,7 +20,8 @@ References:
 --------------------------------------------------------------------------------
 
 Title: 
-Participant: 
+Date: 
+Participants: 
 Context: 
 Decissions: 
 Consequences: 
