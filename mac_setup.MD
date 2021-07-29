@@ -48,14 +48,18 @@
               User git
               IdentityFile ~/.ssh/bitbucket_mac
             ```
-1. Install Kdiff3
-    1. Setup git to use it  
+1. Download and install Kdiff3 from source forge http://kdiff3.sourceforge.net
+    1. When opening Kdiff3, if you get the error message "Kdiff3 Cannot Be Opened Because the Developer Cannot be Verified"
+        1. Open 'System Preferences' for the Mac
+        1. Click on 'Security & Privacy'
+        1. At the bottom of the 'General' tab you should be able to allow Kdiff3 to open
+    1. Setup git to kdiff3 it  
 		`git config --global merge.tool kdiff3`  
-		`git config --global mergetool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’`  
+		`git config --global mergetool.kdiff3.cmd '/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED'`  
 		`git config --global mergetool.kdiff3.trustExitCode false`  
 		  
 		`git config --global diff.guitool kdiff3`  
-		`git config --global difftool.kdiff3.cmd ‘/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED’`  
+		`git config --global difftool.kdiff3.cmd '/Applications/kdiff3.app/Contents/MacOS/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED'`  
 		`git config --global difftool.kdiff3.trustExitCode false`  
 1. Clone terminal scripts and files
     1. `git clone https://github.com/thelukemccarthy/scripts_and_files.git`
@@ -119,4 +123,4 @@
 1. Download and install Virtualbox
 1. Download and setup Win10 for IE test <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>
     1. The password for the VM is Passw0rd!
-1. Download and install Docker Desktop
+1. Download and install Docker Desktop from https://www.docker.com/products/docker-desktop
