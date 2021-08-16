@@ -5,7 +5,8 @@
 1. Install git
     1. `brew install git`
 1. Setup the global settings for git  
-    1. `git config --global user.name "Luke McCarthy"`  
+    1. `git config --global user.name "Luke McCarthy"`
+    1. `git config --global rerere.enabled true` This git setting tell git to remember how to resolve conflicts when you rebase so you don't have to resolve the same conflict again and again  
 1. Generate a new ssh key for each git user  
     1. **NB: NEVER reuse a password for any key generated** not only is this more secure, it also ensures you never commit to the wrong repo  
     1. Run the command `ssh-keygen -t rsa -C <EMAIL_ADDRESS>`  
