@@ -2,6 +2,7 @@
 
 1. Install brew (https://brew.sh/)
     1. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+1. Install iterm2 ```brew install --cask iterm2```
 1. Install git
     1. `brew install git`
 1. Setup the global settings for git  
