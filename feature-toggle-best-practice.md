@@ -1,9 +1,11 @@
 # Feature Toggles Best Practice #
-
-## Advantages ##
-
-## Disadvantages ##
-  * Adds complexity
+The following is my opinion of best practice when using feature toggles. I came to these views after using feature
+toggles on multiple projects and noticed teams having similar issues. Admittedly my experience with feature toggles is 
+quite narrow. I have only used feature toggles to release code into production, sometimes called release toggles. I 
+haven't used feature toggles for A/B Testing, Ops Toggles, Permissioning Toggles or Experiment Toggles. So if you are 
+implementing feature toggles for a reason other than releasing new feature into production, at least some of what is
+here might now apply to your situation. A great resources for all types of feature toggles is the [blog post on Martin 
+Fowler's blog written by Pete Hodgson](https://martinfowler.com/articles/feature-toggles.html) 
 
 ## Why use Feature Toggles ##
   * Provide a safety net if a bug is found
@@ -14,35 +16,53 @@
     * Timing a dependant feature's release becomes trivial when it can be deployed and only released when the feature 
     toggle has been turned on. We've all been in the situation where we couldn't release because our team was ready to 
     release a feature that had a dependency on another system. Usually a lot of pressure was put on the team to ensure 
-    the feature was delivered on time. Only to find on the day of release that out dependant system can't release. 
-    Without feature toggles the code is now in an unreleasable state unless you revert changes or do other painful 
-    things which result in that code no longer being integrated or even being lost 
+    the feature was delivered on time. Only to find on the day of release the dependant system can't release. 
+    Without feature toggles the code would be in an unreleasable state unless you revert changes or do other painful 
+    things which result in that code no longer being integrated with the new changes, or even being lost 
   * Decouples deployment from release
-  * Enables trunk based development and CI (you're not really doing CI if you're not doing trunk based development, 
-  you're doing periodic/sometimes intergration)
+    * This encapsulates the points above
+  * Enables trunk based development and CI (Even if you have a CI server, you're not really doing CI if you're not doing
+    trunk based development, you're doing periodic/sometimes integration)
   * Less likely to have merge conflicts
+    * Feature toggles allow trunk based development with everyone continuously check in and pulling from trunk you are
+    less likely to have merge conflicts. Even if you do have merge conflicts the conflicts will be smaller
   * Reduce the amount to time to production, fix a bug, recover a system failure
+    * When done well, feature toggles reduce the risk of deploying to production. This means you can deploy on every 
+    commit reducing the time to get anything into production. 
   * Can be used to facilitate A/B Testing
+    * With feature toggles and a thrid party service like Launch Darkly, A/B testing become quite easy. You can of 
+    course do A/B testing without a thrid party service, but don't, it's harder than you think.
 
 ## Why NOT to use Feature Toggles ##
-  * You don't use, or have any plan move to, trunk based development, continuous integration and continuous deployment
+  * Some types of projects, 
+    * Machinery (cars, planes, earth move equipment etc)
+    * Desktop software that needs to keep track of versions
+    * Low trust environments, such as open source software. The low trust refers to the people you take pull requests 
+    from and not the software. If you're taking a pull request from someone you don't know you probably want to check
+    their code before it hits your trunk
+    * Medical equipment
+  * You don't use, or have any plan move to, trunk based development, continuous integration and continuous delivery
     * If the team is using feature branches, adding feature toggles on top, provides all the pain of both (feature 
     branches and feature toggle), with limited extra benefits of using feature toggles
   * Moves some complexity of branching into the code base
     * Branching strategies are complex, moving to feature toggles doesn't completely remove all the complexity. If 
-    the team isn't mature enough or lacks the discipline require to always implemented feature toggles a lot of pain can 
-    be the result.
+    the team isn't mature enough or lacks the discipline require to always implemented feature toggles, a lot of pain
+    can result.
 
 ## Best Practices ##
-  * Feature toggle all new code (except bugs)
+  * Feature toggle all new code (except bugs, but probably bugs too)
+    * You never know what is going to change, or be found. Imagine the confidence and trust you can build when a Product
+    Owner comes to you and asks to remove a feature minutes before a release, and you smile and say "No Problem" 
   * When a feature toggle is off/missing the existing behaviour shouldn't change.
-    * This works as a fail safe and is less likely to cause problems
+    * This works as a fail-safe and is less likely to cause problems in production if someone forgets to create a 
+    feature toggle in production environment 
   * Create the feature toggle before any other code
-    * Going back to add a feature toggle after the code is done is much harder than adding the feature toogle as the
+    * Going back to add a feature toggle after the code is done is much harder than adding the feature toggle as the
     first thing you do before any other code
     * If you add the feature toggle after the code is complete 
       * You might miss code that should have been toggled. This can introduce bugs and unexpected behaviour
-      * You can't check your code into trunk because you don't have a feature toogle yet 
+      * You can't check your code into trunk because you don't have a feature toggle yet or it could be released to 
+      production while incomplete 
   * Make it easy for QAs to change the value in a test environment
   * Support different values for each environment (dev, test, prod)
   * Make Feature toggles easy to remove
@@ -53,7 +73,7 @@
   * Remove the feature toggle as soon as possible
     * You don't want a feature toggle around a feature toggle around a feature toggle, removing feature toggles as soon 
     as possible helps to prevent this
-  *  Feature toggles should have good names
+  * Feature toggles should have good names
     * Use the business language to create a name of the feature. 'OneClickPurchase' is much better name than 'purchase' or 'temp'
   * Provide a description for each feature toggle
     * this can be very useful when to provide context to other team members or teams
@@ -110,3 +130,4 @@
 ## Sources ##
 https://martinfowler.com/articles/feature-toggles.html  
 https://trunkbaseddevelopment.com/feature-flags/  
+https://jessitron.com/2021/03/27/those-pesky-pull-request-reviews/
