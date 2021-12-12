@@ -36,7 +36,7 @@ alias gblr='git branch -r'
 alias gbla='git branch -a'
 alias gbc='git checkout -b'
 alias gbd='git branch -d'
-
+alias gblrlc='for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort'
 # Grunt aliases
 alias grb='npx grunt build'
 alias grm='npx grunt mocks'
