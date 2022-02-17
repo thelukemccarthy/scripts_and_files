@@ -1,11 +1,11 @@
-# Feature Toggles Best Practices #
-The following is my opinion of best practice when using feature toggles. I came to these views after using feature
+# Feature Toggles Good Practices #
+The following is my opinion of good practice when using feature toggles. I came to these views after using feature
 toggles on multiple projects and noticed teams having similar issues. Admittedly my experience with feature toggles is 
 somewhat narrow. I have used feature toggles to release code into production frequently. This approach is sometimes 
 called release toggles. I have used feature toggles for A/B Testing only a few features.  As for Ops Toggles, 
 Permissioning Toggles or Experiment Toggles, I don't really have any experience. So if you are 
 implementing feature toggles for a reason other than releasing new feature into production, at least some of what is
-here might now apply to your situation. A great resources for other types of feature toggles is the [blog post on Martin 
+here might not apply to your situation. A great resources for other types of feature toggles is the [blog post on Martin 
 Fowler's blog written by Pete Hodgson](https://martinfowler.com/articles/feature-toggles.html) 
 
 ## Why use Feature Toggles ##
