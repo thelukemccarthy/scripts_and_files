@@ -83,3 +83,11 @@ alias brn='./batect run-nginx'
 alias bsa='./batect start-auth'
 alias bsh='./batect start-history'
 alias bfl='./batect format && ./batect lint'
+
+# function to set the title of an iTerm tab
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
+
+# find the process thats intefearing with the bluetooth mouse
+alias mouse='ioreg -l -d 1 -w 0 | grep SecureInput'
