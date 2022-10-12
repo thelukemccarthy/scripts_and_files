@@ -37,6 +37,10 @@ alias gbla='git branch -a'
 alias gbc='git checkout -b'
 alias gbd='git branch -d'
 alias gblrlct='git fetch --prune && for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort'
+alias guir='git update-index --assume-unchanged' # Make git assume a file is always unchanged. Useful when you need to add secrets to your dev env to work
+alias guia='git update-index --no-assume-unchanged' # Make git see the changes in a file again
+alias guil='git ls-files -v | grep "^h " | sed s/h\ //' # list the files that are assumed to be unchanged. The -v option returns all files but prefixes files that are assumed unchanged with a lower case 'h'
+
 # Grunt aliases
 alias grb='npx grunt build'
 alias grm='npx grunt mocks'
