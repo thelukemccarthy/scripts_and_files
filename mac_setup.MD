@@ -10,7 +10,7 @@
     1. `git config --global rerere.enabled true` This git setting tell git to remember how to resolve conflicts when you rebase so you don't have to resolve the same conflict again and again  
 5. Generate a new ssh key for each git user  
     1. **NB: NEVER reuse a password for any key generated** not only is this more secure, it also ensures you never commit to the wrong repo  
-    1. Run the command `ssh-keygen -t rsa -C <EMAIL_ADDRESS>`  
+    1. Run the command `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`  
     1. Name the files with <serviceName-accountName> for example `github-thelukemccarthy`  
     1. Setup git to use the new keys  
     While these setting can be added in the `~/.gitconfig` file I found it didn't work for me. So I added them to separate files to get the different keys to work.  
