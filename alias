@@ -1,6 +1,7 @@
 # General aliases
 alias ip='curl icanhazip.com'
 alias ll='ls -la'
+alias path='echo $PATH | tr ":" "\n"'
 
 # Git aliases
 alias g='git'
