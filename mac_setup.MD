@@ -3,6 +3,20 @@
 1. Install brew (https://brew.sh/)
     1. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 2. Install iterm2 ```brew install --cask iterm2```
+3. Install logseq ```brew install --cask logseq```
+   1. Change the following settings
+      2. ```Preferred Date Format``` to ```EEE do MMM yyyy```
+      3. ```Preferred workflow``` to ```TODO/DOING```
+   5. Create a `Templates` page
+   6. Create a new template called `Link Details` with the following details 
+   ```
+    Link Title:
+    template:: Link Details
+    Description:
+    Why Interested:
+    Link:
+    Tags: #links
+   ```
 3. Install git
     1. `brew install git`
 4. Setup the global settings for git  
