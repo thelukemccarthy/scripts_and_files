@@ -1,5 +1,8 @@
 # Setting up a new Mac
 
+1. Install Chrome
+1. Install Firefox
+1. Install Rectangle Pro
 1. Install brew (https://brew.sh/)
     1. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 2. Install iterm2 ```brew install --cask iterm2```
@@ -50,8 +53,10 @@
             ```  
               [includeif "gitdir:~/scripts_and_files/"]  
                 path = ~/.gitconfig-thelukemccarthy  
+
               [includeif "gitdir:~/Library/Application Support/JetBrains/IntelliJIdea2021.1/settingsRepository/"]
-                path = ~/.gitconfig-thelukemccarthy
+                path = ~/.gitconfig-thelukemccarthy  
+                
               [includeif "gitdir:<PATH_TO_SRC_CODE_DIR>"]  
                 path = ~/.gitconfig-<CLIENT_NAME>  
             ```  
@@ -90,8 +95,7 @@
 9. Install NVM 
     1. `brew install nvm`
     1. Add the following to `~/.zshrc` after nvm to automatically change node versions if a .nvmrc file exists
-        ```
-          shell script 
+        ``` shell script 
           autoload -U add-zsh-hook
           load-nvmrc() {
             local node_version="$(nvm version)"
@@ -115,16 +119,16 @@
         ```
 10. Install yarn `brew install yarn`
 11. Download and Install VS Code <https://code.visualstudio.com/docs/?dv=osx>
-    1. In VS Code, add the following to settings.json (File > Preferences > Settings):
-    ```json
-    "liveshare.guestApprovalRequired": true
-    ```
 12. Install the following plugin for VS Code 
      1. Live Share
-     1. Rainbow brackets
      1. Indent-rainbow
      1. IntelliJ IDEA Keybindings
-13. Download and install IntelliJ
+13. In VS Code, change the following settings (Code > Preferences > Settings):
+     1. liveshare.guestApprovalRequired > true
+     1. @id:editor.bracketPairColorization.enabled @id:editor.guides.bracketPairs
+         1. Editor › Bracket Pair Colorization > Enabled
+         1. Editor › Guides: Bracket Pairs > true
+14. Download and install IntelliJ
      1. Turn off conflicting Mac OSX keyboard shortcuts
          1. Open ‘System Preferences’
          1. Open ‘Keyboard’
@@ -140,7 +144,7 @@
          1. Prettier
          1. Rainbow Brackets
          1. Docker
-14. Download and install Virtualbox
-15. Download and setup Win10 for IE test <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>
+15. Download and install Virtualbox
+16. Download and setup Win10 for IE test <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>
      1. The password for the VM is Passw0rd!
-16. Download and install Docker Desktop from https://www.docker.com/products/docker-desktop
+17. Podman (docker alternative) <https://podman-desktop.io/downloads>
