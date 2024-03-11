@@ -7,26 +7,18 @@
     1. `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 2. Install iterm2 ```brew install --cask iterm2```
 3. Install logseq ```brew install --cask logseq```
-   1. Change the following settings
+   1. Create a new graph called "work"
+   2. Change the following settings
       2. ```Preferred Date Format``` to ```EEE do MMM yyyy```
       3. ```Preferred workflow``` to ```TODO/DOING```
-   5. Create a `Templates` page
-   6. Create a new template called `Link Details` with the following details 
-   ```
-    Link Title:
-    template:: Link Details
-    Description:
-    Why Interested:
-    Link:
-    Tags: #links
-   ```
+   5. Copy the contents of `./scripts_and_files/logseq/pages` into the pages directory of the logseq graph you just created
 3. Install git
     1. `brew install git`
 4. Setup the global settings for git  
     1. `git config --global user.name "Luke McCarthy"`
     1. `git config --global rerere.enabled true` This git setting tell git to remember how to resolve conflicts when you rebase so you don't have to resolve the same conflict again and again  
 5. Generate a new ssh key for each git user  
-    1. **NB: NEVER reuse a password for any key generated** not only is this more secure, it also ensures you never commit to the wrong repo  
+    1. **NB: NEVER reuse a password for any key generated** not only is this more secure to use a different password, it also ensures you never commit to the wrong repo  
     1. Run the command `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`  
     1. Name the files with <serviceName-accountName> for example `github-thelukemccarthy`  
     1. Setup git to use the new keys  
