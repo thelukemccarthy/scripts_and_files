@@ -1,6 +1,194 @@
-- ## 💤  Waiting  💤
+- 👀  Slipping Tasks  👀
   collapsed:: true
-  List all task in the "Waiting" state, sorted by deadline descending
+	- query-sort-by:: Priority
+	  query-sort-desc:: false
+	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
+	   #+BEGIN_QUERY
+	   {
+	     :title "⚠️ List all tasks that are not started and the scheduled date has passed, ordered by priority"
+	   :query [
+	   :find (pull ?h [*])
+	   :in $ ?today
+	   :where
+	     [?h :block/marker ?marker]
+	     [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAIT" "WAITING"} ?marker)]
+	     ;(or
+	       ;(and
+	         [?h :block/scheduled ?scheduled]
+	         [(> ?scheduled ?today)]
+	         ; [(contains? #{"LATER" "TODO" "WAIT" "WAITING"} ?marker)]
+	       ;)
+	          ;(and
+	       ;  [?h :block/deadline ?deadline]
+	       ;  [(< ?deadline ?today-2d)]
+	       ;)
+	     ;)
+	   ]
+	   :inputs [:today]
+	   :result-transform (
+	   fn [result] (
+	     map (
+	   	 fn [m] (
+	   		update m :block/properties (
+	   		   fn [u] (
+	   			  assoc u :Scheduled (
+	   				 get-in m [:block/scheduled]
+	   			  )
+	   		   )
+	   		)
+	   	 )
+	     )
+	     (
+	   	 map (
+	   		fn [m] (
+	   		   update m :block/properties (
+	   			  fn [u] (
+	   				 assoc u :Deadline (
+	   					get-in m [:block/deadline]
+	   				 )
+	   			  )
+	   		   )
+	   		)
+	   	 )(
+	   		map (
+	   		   fn [m] (
+	   			  update m :block/properties (
+	   				 fn [u] (
+	   					assoc u :Priority (
+	   					   get-in m [:block/priority]
+	   					)
+	   				 )
+	   			  )
+	   		   )
+	   		)(
+	   		  map (
+	   			 fn [m] (
+	   				update m :block/properties (
+	   				   fn [u] (
+	   					  assoc u :State (
+	   						 get-in m [:block/marker]
+	   					  )
+	   				   )
+	   				)
+	   			 )
+	   		  )(
+	   			 map (
+	   			 fn [m] (
+	   				update m :block/properties (
+	   				   fn [u] (
+	   					  assoc u :Task (
+	   						 get-in m [:block/content]
+	   					  )
+	   				   )
+	   				)
+	   			 )
+	   		  )
+	   			 result
+	   		  )
+	   		)
+	   	 )
+	     )
+	   )
+	   )
+	   :group-by-page? false
+	   :collapsed? false
+	   :table-view? true
+	   :query-properties? [:block]
+	   }
+	   #+END_QUERY
+	- query-sort-by:: Priority
+	  query-sort-desc:: false
+	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
+	   #+BEGIN_QUERY
+	   {
+	   :title "🏁 List all tasks with a deadline in less than three days"
+	   :query [
+	   :find (pull ?h [*])
+	   :in $ ?slipDate ?today
+	   :where
+	   [?h :block/marker ?marker]
+	   [(contains? #{"NOW" "LATER" "TODO" "DOING" "WAIT" "WAITING"} ?marker)]
+	    ;(and
+	      [?h :block/deadline ?deadline]
+	      [(< ?deadline ?slipDate)]
+	      [(> ?deadline ?today)]
+	    ;)
+	   ]
+	   :inputs [:+3d :today]
+	   :result-transform (
+	   fn [result] (
+	   map (
+	     fn [m] (
+	        update m :block/properties (
+	           fn [u] (
+	              assoc u :Scheduled (
+	                 get-in m [:block/scheduled]
+	              )
+	           )
+	        )
+	     )
+	   )
+	   (
+	     map (
+	        fn [m] (
+	           update m :block/properties (
+	              fn [u] (
+	                 assoc u :Deadline (
+	                    get-in m [:block/deadline]
+	                 )
+	              )
+	           )
+	        )
+	     )(
+	        map (
+	           fn [m] (
+	              update m :block/properties (
+	                 fn [u] (
+	                    assoc u :Priority (
+	                       get-in m [:block/priority]
+	                    )
+	                 )
+	              )
+	           )
+	        )(
+	          map (
+	             fn [m] (
+	                update m :block/properties (
+	                   fn [u] (
+	                      assoc u :State (
+	                         get-in m [:block/marker]
+	                      )
+	                   )
+	                )
+	             )
+	          )(
+	             map (
+	             fn [m] (
+	                update m :block/properties (
+	                   fn [u] (
+	                      assoc u :Task (
+	                         get-in m [:block/content]
+	                      )
+	                   )
+	                )
+	             )
+	          )
+	             result
+	          )
+	        )
+	     )
+	   )
+	   )
+	   )
+	   :group-by-page? false
+	   :collapsed? false
+	   :table-view? true
+	   :query-properties? [:block]
+	   }
+	   #+END_QUERY
+-
+- ## 💤  Waiting  💤
+  List all task in the "Waiting" state, ordered by deadline descending
 	- query-sort-by:: Deadline
 	  query-sort-desc:: true
 	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
@@ -86,8 +274,7 @@
 	  #+END_QUERY
 -
 - ## 🥇  Goals  🥇
-  collapsed:: true
-  List all tasks labeled as #goals, order by deadline asc
+  List all tasks labeled as #goals, ordered by deadline asc
 	- query-sort-by:: Deadline
 	  query-sort-desc:: false
 	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
@@ -175,10 +362,8 @@
 	  #+END_QUERY
 -
 - ## 🟢  Doing  🟢
-  collapsed:: true
-  List all task in the "Doing" state, sorted by deadline descending
+  List all task in the "Doing" state, ordered by deadline descending
 	- query-sort-by:: Deadline
-	  id:: 65f347b4-820b-431a-9f62-d712a005eb49
 	  query-sort-desc:: true
 	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
 	  #+BEGIN_QUERY
@@ -263,8 +448,7 @@
 	  #+END_QUERY
 -
 - ## 📅  Next Tasks  📅
-  collapsed:: true
-  List all tasks in the next 14 days, order by priority asc
+  List all tasks in the next 14 days, ordered by priority asc
 	- query-sort-by:: Priority
 	  query-sort-desc:: false
 	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
@@ -356,7 +540,6 @@
 	  #+END_QUERY
 -
 - ## ‼️  Important Tasks  ‼️
-  collapsed:: true
   List all tasks labeled #important, order by deadline asc
 	- query-sort-by:: Deadline
 	  query-sort-desc:: false
@@ -446,8 +629,7 @@
 	  #+END_QUERY
 -
 - ## 🔥 Overdue Tasks  🔥
-  collapsed:: true
-  List all overdue task, order by deadline asc
+  List all overdue task, ordered by deadline asc
 	- query-sort-by:: Deadline
 	  query-sort-desc:: false
 	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
@@ -540,8 +722,7 @@
 	  #+END_QUERY
 -
 - ## 🔺 Priority Tasks 🔺
-  collapsed:: true
-  List all task with a priority, order by priority asc
+  List all task with a priority, ordered by priority asc
 	- query-sort-by:: Priority
 	  query-sort-desc:: false
 	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
@@ -636,8 +817,7 @@
 	  #+END_QUERY
 -
 - ## ✅  All Tasks  ✅
-  collapsed:: true
-  List all task, sorted by deadline descending
+  List all task, ordered by deadline descending
 	- query-sort-by:: Deadline
 	  query-sort-desc:: true
 	  query-properties:: [:Priority :Deadline :Scheduled :State :block]
