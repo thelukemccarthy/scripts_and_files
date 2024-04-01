@@ -19,4 +19,9 @@
   template-including-parent:: false
 	- type:: #projects
 	  people::
+- PARA
+  template:: PARA
+  template-including-parent:: false
+	- para:: #projects #areas #resources #archives
+	  -
 -
