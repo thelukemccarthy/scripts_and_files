@@ -24,4 +24,10 @@
   template-including-parent:: false
 	- para:: #projects #areas #resources #archives
 	  -
--
+- Book Properties
+  template:: Book Properties
+  template-including-parent:: false
+	- type:: book
+	  genre::
+	  synopsis::
+	  rating::
