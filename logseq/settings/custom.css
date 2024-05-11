@@ -3,9 +3,9 @@
 /*==================================================*/
 a.tag[data-ref] {
     align-items: center;
-    background: white;
+    background: var(--ls-primary-background-color);
     border-radius: 1rem 1rem 1rem 1rem;
-    color: var(--ls-primary-background-color);
+
     display: inline-flex;
     font-size: 0.8rem;
     font-weight: 500;
@@ -37,6 +37,7 @@ a.tag[data-ref="c"] {
 }
 
 a.tag[data-ref="projects"] {
+  color: var(--ls-primary-background-color);
   background: orange !important;
 }
 
@@ -46,14 +47,17 @@ a.tag[data-ref="goals"] {
 }
 
 a.tag[data-ref="important"] {
+  color: var(--ls-primary-background-color);
   background: tomato !important;
 }
 
 a.tag[data-ref="project-1"] {
+  color: var(--ls-primary-background-color);
   background: Violet !important;
 }
 
 a.tag[data-ref="project-2"] {
+  color: var(--ls-primary-background-color);
   background: Cyan !important;
 }
 
@@ -78,6 +82,7 @@ a.tag[data-ref="project-6"] {
 }
 
 a.tag[data-ref="project-7"] {
+  color: var(--ls-primary-background-color);
   background: Pink !important;
 }
 
@@ -97,6 +102,7 @@ a.tag[data-ref="project-10"] {
 }
 
 a.tag[data-ref="project-11"] {
+  color: var(--ls-primary-background-color);
   background: Lime !important;
 }
 
@@ -106,11 +112,17 @@ a.tag[data-ref="project-12"] {
 }
 
 a.tag[data-ref="project-13"] {
+  color: var(--ls-primary-background-color);
   background: Yellow !important;
 }
 
 a.tag[data-ref="project-14"] {
   color: white;
   background: Maroon !important;
+}
+
+a.tag[data-ref="project-15"] {
+  color: var(--ls-primary-background-color);
+  background: white; 
 }
 
