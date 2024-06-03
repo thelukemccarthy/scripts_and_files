@@ -41,9 +41,19 @@ a.tag[data-ref="projects"] {
   background: orange !important;
 }
 
-a.tag[data-ref="goals"] {
+a.tag[data-ref="areas"] {
   color: white;
-  background: Magenta !important;
+  background: SlateBlue !important;
+}
+
+a.tag[data-ref="resources"] {
+  color: var(--ls-primary-background-color);
+  background: Pink !important;
+}
+
+a.tag[data-ref="goals"] {
+  color: var(--ls-primary-background-color);
+  background: Violet !important;
 }
 
 a.tag[data-ref="important"] {
@@ -51,39 +61,29 @@ a.tag[data-ref="important"] {
   background: tomato !important;
 }
 
-a.tag[data-ref="project-1"] {
+a.tag[data-ref="project-3"] {
   color: var(--ls-primary-background-color);
-  background: Violet !important;
+  background: Lime !important;
 }
 
-a.tag[data-ref="project-2"] {
+a.tag[data-ref="project-4"] {
   color: var(--ls-primary-background-color);
   background: Cyan !important;
 }
 
-a.tag[data-ref="project-3"] {
+a.tag[data-ref="project-5"] {
   color: white;
   background: Blue !important;
 }
 
-a.tag[data-ref="project-4"] {
+a.tag[data-ref="project-6"] {
   color: white;
   background: Black !important;
 }
 
-a.tag[data-ref="project-5"] {
+a.tag[data-ref="project-7"] {
   color: white;
   background: Olive !important;
-}
-
-a.tag[data-ref="project-6"] {
-  color: white;
-  background: SlateBlue !important;
-}
-
-a.tag[data-ref="project-7"] {
-  color: var(--ls-primary-background-color);
-  background: Pink !important;
 }
 
 a.tag[data-ref="project-8"] {
