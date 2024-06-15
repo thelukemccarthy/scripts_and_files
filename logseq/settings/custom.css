@@ -61,68 +61,67 @@ a.tag[data-ref="important"] {
   background: tomato !important;
 }
 
-a.tag[data-ref="project-3"] {
+a.tag[data-ref="project-1"] {
   color: var(--ls-primary-background-color);
   background: Lime !important;
 }
 
-a.tag[data-ref="project-4"] {
+a.tag[data-ref="project-2"] {
   color: var(--ls-primary-background-color);
   background: Cyan !important;
 }
 
-a.tag[data-ref="project-5"] {
+a.tag[data-ref="project-3"] {
   color: white;
   background: Blue !important;
 }
 
-a.tag[data-ref="project-6"] {
+a.tag[data-ref="project-4"] {
   color: white;
   background: Black !important;
 }
 
-a.tag[data-ref="project-7"] {
+a.tag[data-ref="project-5"] {
   color: white;
   background: Olive !important;
 }
 
-a.tag[data-ref="project-8"] {
+a.tag[data-ref="project-6"] {
   color: white;
   background: DodgerBlue !important;
 }
 
-a.tag[data-ref="project-9"] {
+a.tag[data-ref="project-7"] {
   color: white;
   background: Green !important;
 }
 
-a.tag[data-ref="project-10"] {
+a.tag[data-ref="project-8"] {
   color: white;
   background: DarkBlue !important;
 }
 
-a.tag[data-ref="project-11"] {
-  color: var(--ls-primary-background-color);
-  background: Lime !important;
+a.tag[data-ref="project-9"] {
+  color: white;
+  background: Magenta !important;
 }
 
-a.tag[data-ref="project-12"] {
+a.tag[data-ref="project-10"] {
   color: white;
   background: Purple !important;
 }
 
-a.tag[data-ref="project-13"] {
+a.tag[data-ref="project-11"] {
   color: var(--ls-primary-background-color);
   background: Yellow !important;
 }
 
-a.tag[data-ref="project-14"] {
+a.tag[data-ref="project-12"] {
   color: white;
   background: Maroon !important;
 }
 
-a.tag[data-ref="project-15"] {
+a.tag[data-ref="project-13"] {
   color: var(--ls-primary-background-color);
   background: white; 
 }
-
