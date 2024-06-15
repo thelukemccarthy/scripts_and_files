@@ -10,9 +10,9 @@
   template:: People Properties
   template-including-parent:: false
 	- type:: #person
-	  role::
-	  relationship::
-	  team::
+	  role:: 
+	  relationship:: 
+	  team:: 
 	  company::
 - Project Properties
   template:: Project Properties
@@ -28,6 +28,19 @@
   template:: Book Properties
   template-including-parent:: false
 	- type:: book
-	  genre::
-	  synopsis::
+	  genre:: 
+	  synopsis:: 
 	  rating::
+- Quote
+  template:: Quote
+	- Extract:
+	- Attribution:
+	- Source:
+- Meeting
+  template:: Meeting
+	- Title:
+	- Project:
+	- Attendees:
+	- Notes:
+		-
+	-
