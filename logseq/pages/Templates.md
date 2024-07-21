@@ -45,4 +45,19 @@
 	- Attendees:
 	- Notes:
 		-
-	-
+- Day Plan
+  template:: day-plan
+  template-including-parent:: false
+	- Today's focus
+		-
+	- Today's highlight
+		-
+	- TODO Go over daily checklist
+	- TODO 30 minutes of learning
+	- TODO Review 12 week plan
+	- #daily-review
+		- What went well?
+			-
+		- What could be improved?
+			-
+-
