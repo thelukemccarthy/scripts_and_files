@@ -28,6 +28,8 @@
   template:: Book Properties
   template-including-parent:: false
 	- type:: book
+	  name:: 
+	  author:: 
 	  genre:: 
 	  synopsis:: 
 	  rating::
