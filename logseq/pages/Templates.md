@@ -10,6 +10,9 @@
   template:: People Properties
   template-including-parent:: false
 	- type:: #person
+	  pronunciation::
+	  pronouns::
+	  other-names::  
 	  role:: 
 	  relationship:: 
 	  team:: 
