@@ -22,6 +22,11 @@
   template-including-parent:: false
 	- type:: #projects
 	  people::
+- Team Properties
+  template:: Team Properties
+  template-including-parent:: false
+	- Manager:: 
+	  Projects::
 - PARA
   template:: PARA
   template-including-parent:: false
