@@ -9,7 +9,8 @@
 - People Properties
   template:: People Properties
   template-including-parent:: false
-	- type:: #person
+	- icon:: 🧑‍🦱
+	  type:: #person
 	  pronunciation::
 	  pronouns::
 	  other-names::  
@@ -25,13 +26,18 @@
 - Team Properties
   template:: Team Properties
   template-including-parent:: false
-	- Manager:: 
-	  Projects::
+	- icon:: 👥
+	  tags:: #team
+	  manager::
+	  product-owner:: 
+	  projects::
+	  members:: 
+	  past-members::
 - PARA
   template:: PARA
   template-including-parent:: false
 	- para:: #projects #areas #resources #archives
-	  -
+		-
 - Book Properties
   template:: Book Properties
   template-including-parent:: false
@@ -41,31 +47,41 @@
 	  genre:: 
 	  synopsis:: 
 	  rating::
-- Quote
+- #Quote
   template:: Quote
 	- Extract:
 	- Attribution:
 	- Source:
 - Meeting
-  template:: Meeting
+  template:: Meeting Notes
+	- tags:: #meeting
 	- Title:
 	- Project:
 	- Attendees:
 	- Notes:
 		-
 - Day Plan
-  template:: day-plan
+  template:: Day Plan
   template-including-parent:: false
-	- Today's focus
-		-
-	- Today's highlight
-		-
-	- TODO Go over daily checklist
-	- TODO 30 minutes of learning
-	- TODO Review 12 week plan
-	- #daily-review
-		- What went well?
+	- tags:: #day-plan
+		- Today's focus
 			-
-		- What could be improved?
+		- The most important thing this week
 			-
+		- Weekly results goal
+			-
+		- Daily checklist
+			- Go over daily checklist
+			- 30 minutes of learning
+			- Review 12 week plan
+		- #daily-review
+			- What went well?
+				-
+			- What could be improved?
+				-
+		-
+- Checkbox
+  template:: Checkbox
+  template-including-parent:: false
+	- <label><input type="checkbox" /> </label>
 -
