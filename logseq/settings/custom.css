@@ -1,3 +1,21 @@
+/* 
+  Hide the page reference to a PDF when more than one annotation in a single block.
+  When using progressive highlighting it makes the text less busy and easier to read 
+*/
+div[data-type="annotation"]:not(:first-of-type) .prefix-link {
+	display: none;
+}
+
+/* 
+  Hide the inner most bullet point of an embedded reference to a PDF.
+  When using progressive highlighting it makes the text less busy and easier to read
+  when bolding and highlighting a section to summarise the text further
+*/
+div[data-embed="true"] div.block-control-wrap:first-of-type {
+	display: none;
+}
+
+/* Change the colour of bold text to standout more */
 .dark-theme b {
   color: #c79a12;
 }
