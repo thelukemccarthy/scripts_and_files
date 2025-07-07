@@ -18,10 +18,12 @@
 	  relationship:: 
 	  team:: 
 	  company::
+	  preferred-contact-method::
 - Project Properties
   template:: Project Properties
   template-including-parent:: false
-	- type:: #projects
+	- icon:: 🚧
+	  type:: #projects
 	  people::
 - Team Properties
   template:: Team Properties
@@ -65,13 +67,14 @@
 - Book Properties
   template:: Book Properties
   template-including-parent:: false
-	- type:: book
+	- icon:: 📚
+	  type:: book
 	  name:: 
 	  author:: 
 	  genre:: 
 	  synopsis:: 
 	  rating::
-- #Quote
+- Quote
   template:: Quote
 	- Extract:
 	- Attribution:
