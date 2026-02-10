@@ -35,12 +35,12 @@ References:
   https://www.thoughtworks.com/radar/techniques/lightweight-architecture-decision-records
 --------------------------------------------------------------------------------
 
-**Title:** 
-**Date:** 
-**Participants:** 
-**Context:** 
-**Decisions:** 
-**Consequences:** 
-**Review Triggers:** 
+**Title:**  
+**Date:**  
+**Participants:**  
+**Context:**  
+**Decisions:**  
+**Consequences:**  
+**Review Triggers:**  
 
 --------------------------------------------------------------------------------
