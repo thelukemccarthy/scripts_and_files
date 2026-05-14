@@ -141,3 +141,4 @@
 16. Download and setup Win10 for IE test <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>
      1. The password for the VM is Passw0rd!
 17. Podman (docker alternative) <https://podman-desktop.io/downloads>
+18. Download and install Nushell `brew install nushell`
