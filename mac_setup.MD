@@ -16,7 +16,8 @@
     1. `brew install git`
 4. Setup the global settings for git  
     1. `git config --global user.name "Luke McCarthy"`
-    1. `git config --global rerere.enabled true` This git setting tell git to remember how to resolve conflicts when you rebase so you don't have to resolve the same conflict again and again  
+    1. `git config --global rerere.enabled true` This git setting tell git to remember how to resolve conflicts when you rebase so you don't have to resolve the same conflict again and again
+    1. `git config --global push.autoSetupRemote true` This setting will auto create a branch in the remote when pushing.
 5. Generate a new ssh key for each git user  
     1. **NB: NEVER reuse a password for any key generated** not only is this more secure to use a different password, it also ensures you never commit to the wrong repo  
     1. Run the command `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`  
