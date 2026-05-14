@@ -2,6 +2,7 @@
 alias ip='curl icanhazip.com'
 alias ll='ls -la'
 alias path='echo $PATH | tr ":" "\n"'
+alias ki='kiro-cli'
 
 # Git aliases
 alias g='git'
@@ -57,7 +58,7 @@ alias nt='npm test'
 alias ni='npm install'
 alias nis='npm install --save'
 alias nid='npm install --save-dev'
-alias nu='npm uninstall'
+# alias nu='npm uninstall' # conflicts with nushell
 alias nus='npm uninstall --save'
 alias nud='npm uninstall --save-dev'
 alias nupd='npm update'
