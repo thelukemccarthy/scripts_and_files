@@ -50,8 +50,8 @@
 	- If you still want more information refer back to the original text.
 	- This method **allows you to scan the text quickly to get the very key points** and drill deeper when you find something interesting or hard to understand
 	  Source: Building a Second Brain - Tiago Forte
-- Knowledge
-  template:: Layout
+- Page Layout
+  template:: Page Layout
   template-including-parent:: false
 	- # Facts
 		- ## Remember
@@ -74,7 +74,7 @@
 	  genre:: 
 	  synopsis:: 
 	  rating::
-- Quote
+- #Quote
   template:: Quote
 	- Extract:
 	- Attribution:
@@ -107,6 +107,10 @@
 			- What could be improved?
 				-
 		-
+- My Team
+  template:: My Team
+  template-including-parent:: false
+	- 
 - Company Details
   template:: Company Details
   template-including-parent:: false
@@ -119,21 +123,21 @@
 	- ### Weaknesses
 	- ### Oportunities
 	- ### Threats
-- Important Highlight
+- Highlight Important
 	- template:: hightlight-important
 	  #+BEGIN_IMPORTANT
 	  #+BEGIN_QUOTE
 	  **Important:** <Place important text here>
 	  #+END_QUOTE 
 	  #+END_IMPORTANT
-- Tip Highlight
+- Highlight Tip
 	- template:: hightlight-tip
 	  #+BEGIN_TIP 
 	  #+BEGIN_QUOTE 
 	  **Tip:** <Place tip text here>
 	  #+END_QUOTE 
 	  #+END_TIP
-- Trap Highlight
+- Highlight Trap
 	- template:: hightlight-trap
 	  #+BEGIN_WARNING
 	  #+BEGIN_QUOTE
