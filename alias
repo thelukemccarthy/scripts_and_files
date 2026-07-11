@@ -55,6 +55,8 @@ alias ndm='find . -name "node_modules" -type d -prune | xargs rm -rf'
 # NPM aliases
 alias ns='npm start'
 alias nt='npm test'
+alias ntw='npm run test:watch'
+alias ntc='npm run test:coverage'
 alias ni='npm install'
 alias nis='npm install --save'
 alias nid='npm install --save-dev'
